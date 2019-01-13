@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profileAction";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import ProfileActions from "./ProfileActions";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -21,7 +22,14 @@ class Dashboard extends Component {
       dashboardContent = <CircularProgress />;
     } else {
       if (Object.keys(profile).length > 0) {
-        dashboardContent = <h4>Display Profile</h4>;
+        dashboardContent = (
+          <div>
+            <p className="lead text-muted">
+              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+            </p>
+            <ProfileActions />
+          </div>
+        );
       } else {
         //user logged in but no profile
         dashboardContent = (
