@@ -250,7 +250,7 @@ router.delete(
       .then(profile => {
         const removeIndex = profile.education
           .map(item => item.id)
-          .indexOf(request.params.edu_id);
+          .indexOf(req.params.edu_id);
 
         profile.education.splice(removeIndex, 1);
 
