@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { deleteEducation } from "../../actions/profileAction";
+import Button from "@material-ui/core/Button";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
 class Education extends Component {
   onDeleteClick(id) {
@@ -11,41 +18,44 @@ class Education extends Component {
 
   render() {
     const education = this.props.education.map(edu => (
-      <tr key={edu._id}>
-        <td>{edu.school}</td>
-        <td>{edu.degree}</td>
-        <td>
+      <TableRow key={edu._id}>
+        <TableCell>{edu.school}</TableCell>
+        <TableCell>{edu.degree}</TableCell>
+        <TableCell>
           <Moment format="YYYY/MM/DD">{edu.from}</Moment> -{" "}
           {edu.to === null ? (
             "Now"
           ) : (
             <Moment format="YYYY/MM/DD">{edu.to}</Moment>
           )}
-        </td>
-        <td>
-          <button
-            className="btn btn-danger"
+        </TableCell>
+        <TableCell>
+          <Button
+            variant="contained"
+            color="secondary"
             onClick={this.onDeleteClick.bind(this, edu._id)}
           >
-            Delete
-          </button>
-        </td>
-      </tr>
+            Sterge
+          </Button>
+        </TableCell>
+      </TableRow>
     ));
     return (
       <div>
-        <h4 className="mb-4">Education</h4>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>School</th>
-              <th>Degree</th>
-              <th>Years</th>
-              <th />
-            </tr>
-            {education}
-          </thead>
-        </table>
+        <h4 className="mb-4">Educatie</h4>
+        <Paper>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Scoala</TableCell>
+                <TableCell align="left">Grad</TableCell>
+                <TableCell align="left">Perioada</TableCell>
+                <TableCell align="left" />
+              </TableRow>
+            </TableHead>
+            <TableBody>{education}</TableBody>
+          </Table>
+        </Paper>
       </div>
     );
   }

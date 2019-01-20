@@ -7,6 +7,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import ProfileActions from "./ProfileActions";
 import Experience from "./Experience";
 import Education from "./Education";
+import Button from "@material-ui/core/Button";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -31,29 +32,35 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+              Salut <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
             <Experience experience={profile.experience} />
             <Education education={profile.education} />
             <div style={{ marginBottom: "60px" }} />
-            <button
+            <Button
               onClick={this.onDeleteClick.bind(this)}
-              className="btn btn-danger"
+              variant="contained"
+              color="secondary"
             >
-              Delete my account
-            </button>
+              Sterge contul
+            </Button>
           </div>
         );
       } else {
         //user logged in but no profile
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>Please set up a profile</p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
-              Create profile
-            </Link>
+            <p className="lead text-muted">Salut {user.name}</p>
+            <p>Te rugam sa iti completezi campurile de profil</p>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="/create-profile"
+            >
+              Creaza profil
+            </Button>
           </div>
         );
       }
@@ -64,7 +71,7 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4">Dashboard</h1>
+              <h1 className="display-4">Panou control</h1>
               {dashboardContent}
             </div>
           </div>

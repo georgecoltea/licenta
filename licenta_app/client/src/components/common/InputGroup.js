@@ -1,6 +1,8 @@
 import React from "react";
-import classnames from "classnames";
 import PropTypes from "prop-types";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const InputGroup = ({
   name,
@@ -13,21 +15,20 @@ const InputGroup = ({
 }) => {
   return (
     <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">
-          <i className={icon} />
-        </span>
-      </div>
-      <input
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": error
-        })}
-        placeholder={placeholder}
+      <InputLabel htmlFor="input-with-icon-adornment">{placeholder}</InputLabel>
+      <Input
         name={name}
         value={value}
         onChange={onChange}
+        fullWidth
+        id="input-with-icon-adornment"
+        startAdornment={
+          <InputAdornment position="start">
+            <i className={icon} />
+          </InputAdornment>
+        }
       />
-      {error && <div className="invalid-feedback">{error}</div>}
+      <InputLabel htmlFor="invalid-feedback">{error}</InputLabel>
     </div>
   );
 };

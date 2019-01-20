@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authAction";
 import { clearCurrentProfile } from "../../actions/profileAction";
+import Button from "@material-ui/core/Button";
 
 class Navbar extends Component {
   onLogoutClick(e) {
@@ -19,7 +20,7 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            Sign Up
+            Inregistrare
           </Link>
         </li>
         <li className="nav-item">
@@ -34,17 +35,17 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/feed">
-            Post Feed
+            Ultimele postari
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
-            Dashboard
+            Administrare
           </Link>
         </li>
         <li className="nav-item">
           <button
-            style={{ background: "#343a40", border: "none" }}
+            style={{ background: "#143d5b", border: "none" }}
             className="nav-link"
             onClick={this.onLogoutClick.bind(this)}
           >
@@ -64,23 +65,23 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            DevConnector
+            Noutati
           </Link>
-          <button
+          <Button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#mobile-nav"
           >
             <span className="navbar-toggler-icon" />
-          </button>
+          </Button>
 
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {" "}
-                  Developers
+                  Profile
                 </Link>
               </li>
             </ul>

@@ -1,12 +1,11 @@
 import React from "react";
-import classnames from "classnames";
 import PropTypes from "prop-types";
+import TextField from "@material-ui/core/TextField";
 
 const TextFieldGroup = ({
   name,
   placeholder,
   value,
-  label,
   error,
   info,
   type,
@@ -15,19 +14,23 @@ const TextFieldGroup = ({
 }) => {
   return (
     <div className="form-group">
-      <input
+      <TextField
         type={type}
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": error
-        })}
+        id="standard-full-width"
+        label={error}
+        style={{ margin: 8 }}
         placeholder={placeholder}
         name={name}
         value={value}
+        fullWidth
+        margin="normal"
         onChange={onChange}
         disabled={disabled}
+        InputLabelProps={{
+          shrink: true
+        }}
+        helperText={info}
       />
-      {info && <small className="form-text text-muted">{info}</small>}
-      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };

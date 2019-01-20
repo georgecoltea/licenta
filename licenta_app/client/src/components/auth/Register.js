@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authAction";
 import TextFieldGroup from "../common/TextFieldGroup";
+import Button from "@material-ui/core/Button";
 
 class Register extends Component {
   constructor() {
@@ -58,10 +59,8 @@ class Register extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">
-                Create your DevConnector account
-              </p>
+              <h1 className="display-4 text-center">Inregistrare</h1>
+              <p className="lead text-center">Creaza-ti un nou cont</p>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Name"
@@ -99,7 +98,14 @@ class Register extends Component {
                   error={errors.passwordC}
                 />
 
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  className="btn-block mt-2"
+                >
+                  Inregistrare
+                </Button>
               </form>
             </div>
           </div>

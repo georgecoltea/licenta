@@ -7,6 +7,7 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import InputGroup from "../common/InputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile } from "../../actions/profileAction";
+import Button from "@material-ui/core/Button";
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -133,11 +134,11 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create your profile</h1>
+              <h1 className="display-4 text-center">Creaza-ti un profil</h1>
               <p className="lead text-center">
-                Let's get some information to make your profile stand out
+                Adauga informatii profilului tau
               </p>
-              <small className="d-block pb-3">* required</small>
+              <small className="d-block pb-3">* necesar</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
@@ -206,24 +207,28 @@ class CreateProfile extends Component {
                 />
 
                 <div className="mb-3">
-                  <button
+                  <Button
+                    variant="outlined"
                     type="button"
                     onClick={() => {
                       this.setState(prevState => ({
                         displaySocialInputs: !prevState.displaySocialInputs
                       }));
                     }}
-                    className="btn btn-light"
                   >
-                    Add Social Network Links
-                  </button>
+                    Adauga link-uri Social Media
+                  </Button>
                 </div>
                 {socialInputs}
-                <input
+                <Button
+                  variant="contained"
+                  color="primary"
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
-                />
+                  className="btn-block mt-4"
+                >
+                  Adauga
+                </Button>
               </form>
             </div>
           </div>

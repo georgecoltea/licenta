@@ -5,6 +5,8 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addExperience } from "../../actions/profileAction";
+import Button from "@material-ui/core/Button";
+import Checkbox from "@material-ui/core/Checkbox";
 
 class AddExperince extends Component {
   constructor(props) {
@@ -67,12 +69,16 @@ class AddExperince extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
-                Go Back
-              </Link>
-              <h1 className="display-4 text-center">Add Experience</h1>
-              <p className="lead text-center">Add any job or position</p>
-              <small className="d-block pb-3">*Required</small>
+              <Button variant="outlined" component={Link} to="/dashboard">
+                Inapoi
+              </Button>
+              <h1 className="display-4 text-center">
+                Adauga experienta profiesionala
+              </h1>
+              <p className="lead text-center">
+                Orice job sau experienta relevanta
+              </p>
+              <small className="d-block pb-3">*Necesar</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="*Company"
@@ -97,7 +103,7 @@ class AddExperince extends Component {
                   onChange={this.onChange}
                   error={errors.location}
                 />
-                <h6>From Date</h6>
+                <h6>De la</h6>
                 <TextFieldGroup
                   type="date"
                   name="from"
@@ -105,7 +111,7 @@ class AddExperince extends Component {
                   onChange={this.onChange}
                   error={errors.from}
                 />
-                <h6>To Date</h6>
+                <h6>Pana la</h6>
                 <TextFieldGroup
                   type="date"
                   name="to"
@@ -115,17 +121,15 @@ class AddExperince extends Component {
                   disabled={this.state.disabled ? "disabled" : ""}
                 />
                 <div className="form-check mb-4">
-                  <input
+                  <Checkbox
                     type="checkbox"
-                    className="form-check-input"
-                    name="current"
                     value={this.state.current}
                     checked={this.state.checked}
                     onChange={this.onCheck}
                     id="current"
                   />
                   <label htmlFor="current" className="form-check-label">
-                    Current job
+                    Curent
                   </label>
                 </div>
                 <TextAreaFieldGroup
@@ -136,11 +140,15 @@ class AddExperince extends Component {
                   error={errors.description}
                   info="About the position"
                 />
-                <input
+                <Button
+                  variant="contained"
+                  color="primary"
                   type="submit"
                   value="Submit"
-                  className="btn btn-info btn-block mt-4"
-                />
+                  className="btn-block mt-4"
+                >
+                  Adauga
+                </Button>
               </form>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
+import Button from "@material-ui/core/Button";
 
 class Landing extends Component {
   componentDidMount() {
@@ -17,19 +18,26 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Developer Connector</h1>
+                <h1 className="display-3 mb-4">Mate-Info Noutati</h1>
                 <p className="lead">
                   {" "}
-                  Create a developer profile/portfolio, share posts and get help
-                  from other developers
+                  Creaza un cont de student sau profesor pentru a fi la curent
+                  cu ultimele noutati de la Facultatea de Matematica si
+                  Informatica
                 </p>
                 <hr />
-                <Link to="/register" className="btn btn-lg btn-info mr-2">
-                  Sign Up
-                </Link>
-                <Link to="/login" className="btn btn-lg btn-light">
+                <Button
+                  component={Link}
+                  to="/register"
+                  variant="contained"
+                  color="primary"
+                  className="mr-2"
+                >
+                  Inregistrare
+                </Button>
+                <Button variant="contained" component={Link} to="/login">
                   Login
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

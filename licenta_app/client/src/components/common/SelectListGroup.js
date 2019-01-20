@@ -1,6 +1,7 @@
 import React from "react";
-import classnames from "classnames";
 import PropTypes from "prop-types";
+import Select from "@material-ui/core/Select";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
   const selectOptions = options.map(option => (
@@ -11,18 +12,11 @@ const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
 
   return (
     <div className="form-group">
-      <select
-        className={classnames("form-control form-control-lg", {
-          "is-invalid": error
-        })}
-        name={name}
-        value={value}
-        onChange={onChange}
-      >
+      <Select name={name} value={value} onChange={onChange} fullWidth>
         {selectOptions}
-      </select>
-      {info && <small className="form-text text-muted">{info}</small>}
-      {error && <div className="invalid-feedback">{error}</div>}
+      </Select>
+      <FormHelperText>{info}</FormHelperText>
+      <FormHelperText>{error}</FormHelperText>
     </div>
   );
 };
