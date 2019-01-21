@@ -79,7 +79,7 @@ class AddEducation extends Component {
               <small className="d-block pb-3">*Necesar</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="*School"
+                  placeholder="*Scoala"
                   name="school"
                   value={this.state.school}
                   onChange={this.onChange}
@@ -87,7 +87,7 @@ class AddEducation extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="*Degree"
+                  placeholder="*Diploma"
                   name="degree"
                   value={this.state.degree}
                   onChange={this.onChange}
@@ -95,7 +95,7 @@ class AddEducation extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="*Field of Study"
+                  placeholder="*Campul de studiu"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.onChange}
@@ -131,12 +131,12 @@ class AddEducation extends Component {
                   </label>
                 </div>
                 <TextAreaFieldGroup
-                  placeholder="Program Description"
+                  placeholder="Descriere Program"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="About the program"
+                  info="Despre program"
                 />
                 <Button
                   variant="contained"

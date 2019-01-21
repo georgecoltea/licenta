@@ -63,7 +63,7 @@ class Register extends Component {
               <p className="lead text-center">Creaza-ti un nou cont</p>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="Name"
+                  placeholder="Nume"
                   type="text"
                   name="name"
                   value={this.state.name}
@@ -72,7 +72,7 @@ class Register extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Email Address"
+                  placeholder="Email"
                   type="email"
                   name="email"
                   value={this.state.email}
@@ -81,7 +81,7 @@ class Register extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Password"
+                  placeholder="Parola"
                   type="password"
                   name="password"
                   value={this.state.password}
@@ -90,7 +90,7 @@ class Register extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Confirm Password"
+                  placeholder="Confirma Parola"
                   type="password"
                   name="passwordC"
                   value={this.state.passwordC}

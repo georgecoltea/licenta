@@ -62,7 +62,7 @@ class Login extends Component {
               <p className="lead text-center">Conecteaza-te la contul tau</p>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="Email Address"
+                  placeholder="Email"
                   type="email"
                   name="email"
                   value={this.state.email}
@@ -71,7 +71,7 @@ class Login extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Password"
+                  placeholder="Parola"
                   type="password"
                   name="password"
                   value={this.state.password}

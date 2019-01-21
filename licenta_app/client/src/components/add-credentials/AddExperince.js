@@ -81,7 +81,7 @@ class AddExperince extends Component {
               <small className="d-block pb-3">*Necesar</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="*Company"
+                  placeholder="*Companie"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
@@ -89,7 +89,7 @@ class AddExperince extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="*Job title"
+                  placeholder="*Titlu"
                   name="title"
                   value={this.state.title}
                   onChange={this.onChange}
@@ -97,7 +97,7 @@ class AddExperince extends Component {
                 />
 
                 <TextFieldGroup
-                  placeholder="Location"
+                  placeholder="Locatie"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
@@ -133,7 +133,7 @@ class AddExperince extends Component {
                   </label>
                 </div>
                 <TextAreaFieldGroup
-                  placeholder="Job Description"
+                  placeholder="Descrierea Job-ului"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}

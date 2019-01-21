@@ -120,13 +120,12 @@ class CreateProfile extends Component {
 
     //select options for status
     const options = [
-      { label: "Select Professional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Manager", value: "Manager" },
+      { label: "Alege status profesional", value: 0 },
+      { label: "Programator", value: "Developer" },
       { label: "Student", value: "Student" },
-      { label: "Teacher", value: "Teacher" },
+      { label: "Profesor", value: "Teacher" },
       { label: "Intern", value: "Intern" },
-      { label: "Other", value: "Other" }
+      { label: "Altele", value: "Other" }
     ];
 
     return (
@@ -141,29 +140,29 @@ class CreateProfile extends Component {
               <small className="d-block pb-3">* necesar</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
-                  placeholder="* Profile Handle"
+                  placeholder="* prescurtare profile"
                   name="handle"
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="Handle for profile URL"
+                  info="Prescurtare pentru URL"
                 />
                 <SelectListGroup
-                  placeholder="* Status"
+                  placeholder="* Cariera"
                   name="status"
                   value={this.state.status}
                   onChange={this.onChange}
                   error={errors.status}
                   options={options}
-                  info="Career Status"
+                  info="Statusul Carierei"
                 />
                 <TextFieldGroup
-                  placeholder="Company"
+                  placeholder="Companie"
                   name="company"
                   value={this.state.company}
                   onChange={this.onChange}
                   error={errors.copmany}
-                  info="Company"
+                  info="Companie"
                 />
                 <TextFieldGroup
                   placeholder="Website"
@@ -171,39 +170,39 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Your website"
+                  info="Webite-ul tau"
                 />
                 <TextFieldGroup
-                  placeholder="* Location"
+                  placeholder="* Locatie"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City"
+                  info="Oras"
                 />
                 <TextFieldGroup
-                  placeholder="* Skills"
+                  placeholder="* Tehnologii cunoscute"
                   name="skills"
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Your skills separated by ','"
+                  info="Tehnologiile cunoscute separate de ','"
                 />
                 <TextFieldGroup
-                  placeholder="Github Username"
+                  placeholder="Utilizator Github"
                   name="githubusername"
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.githubusername}
-                  info="If you want your latest repo's to be visible, include your username"
+                  info="Pentru a afisa ultimele repository-uri"
                 />
                 <TextAreaFieldGroup
-                  placeholder="Short Bio"
+                  placeholder="Descriere"
                   name="bio"
                   value={this.state.bio}
                   onChange={this.onChange}
                   error={errors.bio}
-                  info="Tell us a little about yourself"
+                  info="Spune ceva despre tine"
                 />
 
                 <div className="mb-3">
