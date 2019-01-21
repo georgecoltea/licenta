@@ -45,3 +45,7 @@ img {
 .bg-info {
   background-color: #3f51b5 !important;
 }
+
+.text-info {
+  color: #3f51b5 !important;
+}

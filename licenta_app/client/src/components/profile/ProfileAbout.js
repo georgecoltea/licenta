@@ -20,16 +20,18 @@ class ProfileAbout extends Component {
       <div className="row">
         <div className="col-md-12">
           <div className="card card-body bg-light mb-3">
-            <h3 className="text-center text-info">{firstName} is Bio</h3>
+            <h3 className="text-center text-info">
+              Descrierea lui {firstName}
+            </h3>
             <p className="lead">
               {isEmpty(profile.bio) ? (
-                <span>{firstName} does not have a bio</span>
+                <span>{firstName} nu are o descriere adaugata</span>
               ) : (
                 <span>{profile.bio}</span>
               )}
             </p>
             <hr />
-            <h3 className="text-center text-info">Skill Set</h3>
+            <h3 className="text-center text-info">Tehnologii cunoscute</h3>
             <div className="row">
               <div className="d-flex flex-wrap justify-content-center align-items-center">
                 {skills}

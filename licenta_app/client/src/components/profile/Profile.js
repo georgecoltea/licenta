@@ -8,6 +8,7 @@ import ProfileCreds from "./ProfileCreds";
 import ProfileGithub from "./ProfileGithub";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { getProfileByHandle } from "../../actions/profileAction";
+import Button from "@material-ui/core/Button";
 
 class Profile extends Component {
   componentDidMount() {
@@ -33,9 +34,14 @@ class Profile extends Component {
         <div>
           <div className="row">
             <div className="col-md-6">
-              <Link to="/profiles" className="btn btn-light mb-3 float-left">
-                Back To Profiles
-              </Link>
+              <Button
+                variant="outlined"
+                component={Link}
+                to="/profiles"
+                className="mb-3 float-left"
+              >
+                Inapoi la profile
+              </Button>
             </div>
             <div className="col-md-6" />
           </div>
@@ -45,6 +51,7 @@ class Profile extends Component {
             education={profile.education}
             experience={profile.experience}
           />
+
           {profile.githubusername ? (
             <ProfileGithub username={profile.githubusername} />
           ) : null}
