@@ -7,6 +7,7 @@ import CommentForm from "./CommentForm";
 import CommentFeed from "./CommentFeed";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { getPost } from "../../actions/postAction";
+import Button from "@material-ui/core/Button";
 
 class Post extends Component {
   componentDidMount() {
@@ -33,9 +34,14 @@ class Post extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <Link to="/feed" className="btn btn-light mb-3">
-                Back To Feed
-              </Link>
+              <Button
+                variant="outlined"
+                component={Link}
+                to="/feed"
+                className="mb-3"
+              >
+                Inapoi
+              </Button>
               {postContent}
             </div>
           </div>
