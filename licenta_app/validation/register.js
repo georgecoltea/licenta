@@ -10,35 +10,35 @@ module.exports = function validateRegisterInput(data) {
   data.passwordC = !isEmpty(data.passwordC) ? data.passwordC : "";
 
   if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
-    errors.name = "Name must be between 2 and 30 characters";
+    errors.name = "Numele trebuie sa fie intre 2 si 30 caractere";
   }
 
   if (Validator.isEmpty(data.name)) {
-    errors.name = "Name field is required";
+    errors.name = "Numele este necesar";
   }
 
   if (Validator.isEmpty(data.email)) {
-    errors.email = "Email field is required";
+    errors.email = "Email-ul este necesar";
   }
 
   if (!Validator.isEmail(data.email)) {
-    errors.email = "Email is not valid";
+    errors.email = "Email-ul nu este valid";
   }
 
   if (Validator.isEmpty(data.password)) {
-    errors.password = "Password field is required";
+    errors.password = "Campul parola este necesar";
   }
 
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = "Password must be between 6 and 30 charachters";
+    errors.password = "Parola trebuie sa fie intre 6 si 30 caractere";
   }
 
   if (Validator.isEmpty(data.passwordC)) {
-    errors.passwordC = "Confirm password field is required";
+    errors.passwordC = "Este necesar sa confirmi parola";
   }
 
   if (!Validator.equals(data.password, data.passwordC)) {
-    errors.passwordC = "Passwords must match";
+    errors.passwordC = "Parolele trebuie sa fie identice";
   }
 
   return {

@@ -8,19 +8,19 @@ module.exports = function validateLoginInput(data) {
   data.password = !isEmpty(data.password) ? data.password : "";
 
   if (!Validator.isEmail(data.email)) {
-    errors.email = "Email is not valid";
+    errors.email = "Email-ul nu este valid";
   }
 
   if (Validator.isEmpty(data.email)) {
-    errors.email = "Email field is required";
+    errors.email = "Email-ul este necesar";
   }
 
   if (Validator.isEmpty(data.password)) {
-    errors.password = "Password field is required";
+    errors.password = "Parola este necesara";
   }
 
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
-    errors.password = "Password must be between 6 and 30 charachters";
+    errors.password = "Parola trebuie sa fie intre 6 si 30 caractere";
   }
 
   return {
