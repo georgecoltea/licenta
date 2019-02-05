@@ -8,8 +8,6 @@ const Profile = require("../../models/Profile");
 
 const validatePostInput = require("../../validation/post");
 
-router.get("/test", (req, res) => res.json({ msg: "Posts Works" }));
-
 //get posts
 router.get("/", (req, res) => {
   Post.find()
@@ -51,11 +49,11 @@ router.post(
 //delete post
 router.delete(
   "/:id",
-  passport.authenticate("jwt", { session: false }, (req, res) => {
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
     Profile.findOne({ user: req.user.id }).then(profile => {
       Post.findById(req.params.id)
         .then(post => {
-          //check for post owner
           if (post.user.toString() !== req.user.id) {
             return res
               .status(401)
@@ -66,7 +64,7 @@ router.delete(
         })
         .catch(err => res.status(404).json({ postnotfound: "No post found" }));
     });
-  })
+  }
 );
 
 //post a comment

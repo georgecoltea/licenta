@@ -16,7 +16,7 @@ const TextFieldGroup = ({
     <div className="form-group">
       <TextField
         type={type}
-        id="standard-full-width"
+        id={name}
         label={error}
         style={{ margin: 8 }}
         placeholder={placeholder}
